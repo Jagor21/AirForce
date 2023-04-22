@@ -227,7 +227,7 @@ class MainActivity : AppCompatActivity() {
                 val queue = Volley.newRequestQueue(this)
                 val stringRequest = StringRequest(
                     Request.Method.GET,
-                    "https://yhuqaaetu.vn.ua//click?ecid=&bundle_id=com.sibertas.egyptpower&subid1=$subId1&appsflyer_id=$appsflyerUserId&advertising_id=$advertisingId",
+                    "https://moluben.es//click?ecid=&bundle_id=com.flavo_oculus.air_force&subid1=$subId1&appsflyer_id=$appsflyerUserId&advertising_id=$advertisingId",
                     { response ->
                         // Display the first 500 characters of the response string.
                         Log.d("STRING_RESPONSE", response)
