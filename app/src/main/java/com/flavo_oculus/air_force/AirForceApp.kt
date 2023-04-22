@@ -15,7 +15,7 @@ import com.flavo_oculus.air_force.AirForceAFAnalytics.Companion.FIRST_LAUNCH_EVE
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 
-private const val LOG_TAG = "GalacticWarsApp"
+private const val LOG_TAG = "AirForceApp"
 private const val FIRST_LAUNCH = "first_launch"
 
 class AirForceApp : Application() {

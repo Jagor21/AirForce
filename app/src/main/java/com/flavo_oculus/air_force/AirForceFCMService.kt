@@ -14,8 +14,8 @@ class AirForceFCMService: FirebaseMessagingService() {
 
 
     companion object {
-        const val CHANNEL_ID = "galactic_wars_channel_id"
-        const val SILENT_CHANNEL_ID = "galactic_wars_silent_channel_id"
+        const val CHANNEL_ID = "air_force_channel_id"
+        const val SILENT_CHANNEL_ID = "air_force_silent_channel_id"
     }
 
     override fun onNewToken(token: String) {
