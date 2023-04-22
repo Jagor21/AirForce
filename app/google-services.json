@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "507592996274",
+    "project_id": "airforce-58c74",
+    "storage_bucket": "airforce-58c74.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:507592996274:android:597642586c59410930e0ab",
+        "android_client_info": {
+          "package_name": "com.flavo_oculus.air_force"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "507592996274-kchgif79f97424a4d4j4ep82ecdqjv2q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flavo_oculus.air_force",
+            "certificate_hash": "1b24899492db7e31c971d8301fb61ebd687430e2"
+          }
+        },
+        {
+          "client_id": "507592996274-3gv5lk9u8fhq6dgtj0gjq16epnjmtee0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4FK1OGMPIN7CA90SVvSF_hnrVV2x3rts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "507592996274-3gv5lk9u8fhq6dgtj0gjq16epnjmtee0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
