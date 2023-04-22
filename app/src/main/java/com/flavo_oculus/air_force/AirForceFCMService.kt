@@ -41,6 +41,7 @@ class AirForceFCMService: FirebaseMessagingService() {
         val intent = Intent(baseContext, MainActivity::class.java)
         val channelId = "notification_channel"
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        intent.putExtra("is_from_notification", true)
         val pendingIntent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             PendingIntent.getActivity(
                 baseContext, 0, intent, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_ONE_SHOT

@@ -12,5 +12,5 @@
 //        mavenCentral()
 //    }
 //}
-rootProject.name = "Air Force"
+//rootProject.name = "Air Force"
 include ':app'

