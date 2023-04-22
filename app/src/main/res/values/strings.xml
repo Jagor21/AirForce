@@ -3,5 +3,5 @@
     <string name="reminders_notification_channel_id">air_force_channel_id</string>
     <string name="default_notification_channel_id">com.flavo_oculus.air_force</string>
     <string name="reminders_notification_channel_name">air_force_channel_name</string>
-    <string name="appsflyer_dev_key">bqV9c3rktMf6rHfnoeKgPP</string>
+    <string name="appsflyer_dev_key">KThvnx93a7oz6DWLvDqCQS</string>
 </resources>
